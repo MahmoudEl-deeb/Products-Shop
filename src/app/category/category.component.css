@@ -1,0 +1,10 @@
+img {
+  width: 25vw;
+  height: 40vh;
+}
+
+.cardfooter {
+  background-color: green;
+  width: 100%;
+  height: 100%;
+}
