@@ -1,19 +1,16 @@
 <h2 class="text-center">products</h2>
-<div class="flex row-cols-3">
-  @for( product of products; track $index ){
-  <div class="card d-inline-flex">
-    <div class="card-header flex m-auto">
-      <img [src]="product.image" alt="">
-    </div>
-    <div class="card-body">
-      <h5>{{product.name}}</h5>
-      <p>{{product.price}}</p>
-    </div>
-    <div class="card-footer">
-      <div class="cardfooter flex text-center">
-        <input type="text" [(ngModel)]="product.name" class="m-2">
+<app-filtredproduct></app-filtredproduct>
+<br><br>
+@defer (on viewport) {
+  <div class="flex row-cols-3">
+    @for( product of products; track product.id ){
+  <app-card [product]="product" class="card d-inline-flex"></app-card>
+    }
+  </div>
+}
+@placeholder {
+  <h2>Waiting for loading......</h2>
+}
 
-     </div>
-    </div>
-  </div>}
-</div>
+
+

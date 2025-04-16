@@ -1,0 +1,6 @@
+<h2 class="text-center">products</h2>
+<div class="flex row-cols-3">
+  @for( product of products; track product.id ){
+<app-card [product]="product" class="card d-inline-flex"></app-card>
+}
+</div>
